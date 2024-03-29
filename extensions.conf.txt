@@ -1,0 +1,38 @@
+[from-internal]
+exten => 6000,1,Answer()
+exten => 6000,2,Dial(SIP/zoiper,60)
+exten => 6000,3,Playback(vm-nobodyavail)
+exten => 6000,4,VoiceMail(6000@main)
+exten => 6000,5,Hangup()
+
+exten => 6001,1,Answer()
+exten => 6001,2,Dial(SIP/xlite,60)
+exten => 6001,3,Playback(vm-nobodyavail)
+exten => 6001,4,VoiceMail(6001@main)
+exten => 6001,5,Hangup()
+
+exten => 6002,1,Answer()
+exten => 6002,2,Dial(SIP/kevin,60)
+exten => 6002,3,Playback(vm-nobodyavail)
+exten => 6002,4,VoiceMail(6002@main)
+exten => 6002,5,Hangup()
+
+exten => 6003,1,Answer()
+exten => 6003,2,Dial(SIP/john,60)
+exten => 6003,3,Playback(vm-nobodyavail)
+exten => 6003,4,VoiceMail(6003@main)
+exten => 6003,5,Hangup()
+
+
+
+exten => 8001,1,VoicemailMain(6000@main)
+exten => 8001,2,Hangup()
+
+exten => 8002,1,VoicemailMain(6001@main)
+exten => 8002,2,Hangup()
+
+exten => 8001,1,VoicemailMain(6002@main)
+exten => 8001,2,Hangup()
+
+exten => 8002,1,VoicemailMain(6003@main)
+exten => 8002,2,Hangup()
